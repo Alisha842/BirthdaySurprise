@@ -10,8 +10,8 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #fdeff9, #c2e9fb, #a1c4fd);
-    color: #ffffff;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    color: #5a2a45;
     overflow-x: hidden;
     text-align: center;
 }
@@ -29,54 +29,55 @@ section {
 /* Headings */
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.9rem;
+    font-size: 2.8rem;
+    color: #7b2c4a;
     animation: glow 3s infinite alternate;
 }
 
 @keyframes glow {
-    from { text-shadow: 0 0 12px #fff; }
-    to { text-shadow: 0 0 40px #ffb6c1; }
+    from { text-shadow: 0 0 8px #ffd1dc; }
+    to { text-shadow: 0 0 18px #ff9eb5; }
 }
 
 /* Paragraph */
 p {
-    max-width: 780px;
+    max-width: 800px;
     font-size: 1.1rem;
     line-height: 1.9;
-    opacity: 0;
-    animation: fadeUp 2.5s forwards;
+    margin-top: 15px;
+    animation: fadeUp 2s forwards;
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
+    from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* Buttons */
 button {
     margin-top: 35px;
-    background: linear-gradient(45deg, #ffffff, #ffe4ec);
-    color: #ff6f91;
+    background: linear-gradient(45deg, #ffb6c1, #ffd1dc);
+    color: #5a2a45;
     border: none;
-    padding: 15px 42px;
-    border-radius: 45px;
+    padding: 15px 40px;
+    border-radius: 40px;
     font-size: 1rem;
     cursor: pointer;
     animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
-    50% { transform: scale(1.12); }
+    50% { transform: scale(1.1); }
 }
 
 /* Cake */
 .cake {
     font-size: 150px;
-    animation: bounce 2.8s infinite;
+    animation: bounce 2.5s infinite;
 }
 
 @keyframes bounce {
-    50% { transform: translateY(-35px); }
+    50% { transform: translateY(-30px); }
 }
 
 /* Floating items */
@@ -84,7 +85,7 @@ button {
     position: fixed;
     bottom: -20px;
     animation: floatUp linear infinite;
-    opacity: 0.75;
+    opacity: 0.6;
 }
 
 @keyframes floatUp {
@@ -105,22 +106,15 @@ button {
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Floating animations -->
+<!-- Floating hearts & balloons -->
 <script>
-const floats = [
-    {emoji:"🎈", size:26},
-    {emoji:"💖", size:18},
-    {emoji:"✨", size:14},
-    {emoji:"🌸", size:16}
-];
-
-for(let i=0;i<55;i++){
-    const item = floats[Math.floor(Math.random()*floats.length)];
+const floats = ["💖","🎈","✨","🌸"];
+for(let i=0;i<45;i++){
     let el = document.createElement("div");
     el.className = "float";
-    el.innerHTML = item.emoji;
-    el.style.left = Math.random()*100+"vw";
-    el.style.fontSize = item.size+"px";
+    el.innerHTML = floats[Math.floor(Math.random()*floats.length)];
+    el.style.left = Math.random()*100 + "vw";
+    el.style.fontSize = 14 + Math.random()*16 + "px";
     el.style.animationDuration = 7 + Math.random()*6 + "s";
     document.body.appendChild(el);
 }
@@ -129,20 +123,36 @@ for(let i=0;i<55;i++){
 <!-- SECTION 1 -->
 <section id="intro">
     <h1>🎉 Happy Birthday Tasneem 💕</h1>
-    <p style="animation-delay:1s;">A little fairytale made just for you ✨</p>
+    <p>A little surprise made just for you ✨</p>
     <button onclick="showCake()">Open Surprise 🎁</button>
 </section>
 
 <!-- SECTION 2 -->
 <section id="cakeSection">
     <div class="cake">🎂</div>
-    <p style="animation-delay:1s;">A sweet celebration for a beautiful soul 🌸</p>
+    <p>A sweet celebration for a beautiful soul 🌸</p>
     <button onclick="showLetter()">Next 💖</button>
 </section>
 
 <!-- SECTION 3 -->
 <section id="letterSection">
-    <p id="typedText"></p>
+    <p>
+        Happy Birthday to the girl who means the world to me 💕<br><br>
+
+        Thank you for being my safe place, my partner in every crazy plan,
+        and the one person who understands me without even trying.
+        I'm so grateful for every laugh, every late-night talk,
+        every memory, and every little moment we have shared.<br><br>
+
+        You deserve all the happiness and love 🤍<br><br>
+
+        You're strong, beautiful, and so talented.
+        Watching you shine makes me happier than words can explain.
+        I hope this year brings new opportunities
+        and endless reasons to smile 🌸<br><br>
+
+        I love you so much — forever and always 💖
+    </p>
     <button onclick="showFinal()">Final Wish ✨</button>
 </section>
 
@@ -153,27 +163,6 @@ for(let i=0;i<55;i++){
 </section>
 
 <script>
-const message = `Happy Birthday to the girl who means the world to me 💕\n\n
-Thank you for being my safe place, my partner in every crazy plan,
-and the one person who understands me without even trying.
-I'm so grateful for every laugh, every late-night talk,
-every memory, and every little moment we have shared.\n\n
-You deserve all the happiness and love 🤍\n\n
-You're strong, beautiful, and so talented.
-Watching you shine makes me happier than words can explain.
-I hope this year brings new opportunities
-and endless reasons to smile 🌸\n\n
-I love you so much — forever and always 💖`;
-
-let i = 0;
-function typeText(){
-    if(i < message.length){
-        typedText.innerHTML += message.charAt(i);
-        i++;
-        setTimeout(typeText, 40);
-    }
-}
-
 function showCake(){
     intro.style.display="none";
     cakeSection.style.display="flex";
@@ -182,7 +171,6 @@ function showCake(){
 function showLetter(){
     cakeSection.style.display="none";
     letterSection.style.display="flex";
-    typeText();
 }
 
 function showFinal(){
