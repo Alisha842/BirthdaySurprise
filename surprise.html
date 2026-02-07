@@ -1,48 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Happy Birthday Bestie 💖</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+<meta charset="UTF-8">
+<title>Happy Birthday Tasneem 💕</title>
 
-        .message {
-            max-width: 500px;
-        }
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
 
-        h1 {
-            font-size: 36px;
-        }
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    top: -10px;
+    animation: fall 4s linear infinite;
+}
 
-        p {
-            font-size: 18px;
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-    </style>
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Glow message box */
+.message {
+    background: rgba(255,255,255,0.15);
+    padding: 45px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    animation: fadeUp 2s ease;
+    z-index: 2;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message h1 {
+    font-size: 40px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.message p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="message">
-        <h1>🎂 Happy Birthday My Best Friend! 💖</h1>
-        <p>
-            Thank you for being my partner in crime, my biggest supporter,
-            and the one who understands me without words.  
-            Life is better with you in it.  
-            I’m so lucky to call you my best friend. 💕  
-        </p>
-        <p>May your day be as amazing and beautiful as you are ✨🎉</p>
-    </div>
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Confetti -->
+<div class="confetti" style="left:5%; animation-delay:0s;"></div>
+<div class="confetti" style="left:15%; animation-delay:1s;"></div>
+<div class="confetti" style="left:25%; animation-delay:2s;"></div>
+<div class="confetti" style="left:35%; animation-delay:0.5s;"></div>
+<div class="confetti" style="left:45%; animation-delay:1.5s;"></div>
+<div class="confetti" style="left:55%; animation-delay:2.5s;"></div>
+<div class="confetti" style="left:65%; animation-delay:1s;"></div>
+<div class="confetti" style="left:75%; animation-delay:2s;"></div>
+<div class="confetti" style="left:85%; animation-delay:0.8s;"></div>
+
+<div class="message">
+    <h1>🎂 Happy Birthday Tasneem 💖</h1>
+    <p>
+        You are not just my best friend,  
+        you are my safe place, my smile, my happiness 🌸  
+        Life feels brighter because of you ✨  
+    </p>
+    <p>
+        May your days be full of love, laughter,  
+        dreams coming true, and endless joy 🎉  
+    </p>
+    <p>
+        — From Alisha 💕
+    </p>
+</div>
 
 </body>
 </html>
