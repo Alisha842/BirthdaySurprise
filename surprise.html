@@ -3,83 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy Birthday Tasneem</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-    text-align: center;
     color: #fff;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* Page sections */
+/* sections */
 section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 25px;
 }
 
-/* Heading */
+/* stars */
+.star {
+    position: fixed;
+    top: -10px;
+    font-size: 14px;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(110vh); }
+}
+
+/* hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 18px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-120vh); }
+}
+
+/* headings */
 h1 {
-    font-size: 2.5rem;
-    animation: fadeDown 2s;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.7rem;
+    animation: glow 2s infinite alternate;
 }
 
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 30px #ffb6c1; }
+}
+
+/* text */
 p {
-    max-width: 700px;
+    max-width: 750px;
     font-size: 1.1rem;
-    line-height: 1.8;
-    margin: 20px;
+    line-height: 1.9;
     opacity: 0;
     animation: fadeUp 2s forwards;
-    animation-delay: 1s;
-}
-
-/* Button */
-button {
-    background: #fff;
-    color: #ee6a7c;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-top: 30px;
-    animation: pulse 1.5s infinite;
-}
-
-/* Cake */
-.cake {
-    font-size: 120px;
-    animation: bounce 2s infinite;
-}
-
-/* Animations */
-@keyframes fadeDown {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
 }
 
 @keyframes fadeUp {
-    from {opacity: 0; transform: translateY(50px);}
-    to {opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* buttons */
+button {
+    background: #fff;
+    color: #ff6f91;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1rem;
+    margin-top: 30px;
+    cursor: pointer;
+    animation: pulse 1.6s infinite;
 }
 
 @keyframes pulse {
-    0% {transform: scale(1);}
-    50% {transform: scale(1.1);}
-    100% {transform: scale(1);}
+    50% { transform: scale(1.1); }
+}
+
+/* cake */
+.cake {
+    font-size: 130px;
+    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-20px);}
+    50% { transform: translateY(-25px); }
 }
 
-/* Hidden sections */
+/* hidden */
 #cakeSection, #letterSection, #finalWish {
     display: none;
 }
@@ -88,61 +115,94 @@ button {
 
 <body>
 
+<!-- Background music -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- stars + hearts -->
+<script>
+for(let i=0;i<30;i++){
+    let s=document.createElement("div");
+    s.className="star";
+    s.innerHTML="✨";
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDuration=5+Math.random()*5+"s";
+    document.body.appendChild(s);
+}
+for(let i=0;i<25;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=6+Math.random()*4+"s";
+    document.body.appendChild(h);
+}
+</script>
+
 <!-- SECTION 1 -->
 <section id="intro">
-    <h1>🎉 Happy Birthday Tasneem 💖</h1>
-    <p>I have a surprise for you ✨</p>
+    <h1>🎉 Happy Birthday Tasneem 💕</h1>
+    <p style="animation-delay:1s;">I have a little surprise for you ✨</p>
     <button onclick="showCake()">Open Surprise 🎁</button>
 </section>
 
 <!-- SECTION 2 -->
 <section id="cakeSection">
     <div class="cake">🎂</div>
-    <button onclick="showLetter()">Next 💕</button>
+    <p style="animation-delay:1s;">A sweet cake for the sweetest soul 🧁</p>
+    <button onclick="showLetter()">Next 💖</button>
 </section>
 
 <!-- SECTION 3 -->
 <section id="letterSection">
-    <p>
-    Happy Birthday to the girl who means the world to me!<br><br>
-
-    Thank you for being my safe place, my partner in every crazy plan,
-    and the one person who understands me without even trying.
-    I'm so grateful for every laugh, every late-night talk,
-    every memory, and every little moment we have shared.<br><br>
-
-    You deserve all the happiness and love 🤍<br><br>
-
-    You're strong, beautiful, and so talented.
-    Watching you shine makes me happier than words can explain.
-    I hope this year brings new opportunities
-    and endless reasons to smile 🌸<br><br>
-
-    I love you so much — forever and always 💖
-    </p>
-    <button onclick="showFinal()">One More 💫</button>
+    <p id="typedText"></p>
+    <button onclick="showFinal()">One Last Thing ✨</button>
 </section>
 
 <!-- SECTION 4 -->
 <section id="finalWish">
-    <h1>✨ Once Again Happy Birthday 🎉</h1>
+    <h1>✨ Once Again, Happy Birthday 🎉</h1>
     <p>May Allah fulfill all of your dreams 🤍</p>
 </section>
 
 <script>
-function showCake() {
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("cakeSection").style.display = "flex";
+const message = `Happy Birthday to the girl who means the world to me! 💕\n\n
+Thank you for being my safe place, my partner in every crazy plan,
+and the one person who understands me without even trying.
+I'm so grateful for every laugh, every late-night talk,
+every memory, and every little moment we have shared.\n\n
+You deserve all the happiness and love 🤍\n\n
+You're strong, beautiful, and so talented.
+Watching you shine makes me happier than words can explain.
+I hope this year brings new opportunities
+and endless reasons to smile 🌸\n\n
+I love you so much — forever and always 💖`;
+
+let index = 0;
+
+function typeText(){
+    if(index < message.length){
+        typedText.innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeText, 40);
+    }
 }
 
-function showLetter() {
-    document.getElementById("cakeSection").style.display = "none";
-    document.getElementById("letterSection").style.display = "flex";
+function showCake(){
+    intro.style.display="none";
+    cakeSection.style.display="flex";
 }
 
-function showFinal() {
-    document.getElementById("letterSection").style.display = "none";
-    document.getElementById("finalWish").style.display = "flex";
+function showLetter(){
+    cakeSection.style.display="none";
+    letterSection.style.display="flex";
+    typeText();
+}
+
+function showFinal(){
+    letterSection.style.display="none";
+    finalWish.style.display="flex";
 }
 </script>
 
