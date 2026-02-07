@@ -2,150 +2,149 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Tasneem 💖</title>
-
+<title>Happy Birthday Tasneem</title>
 <style>
 body {
     margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle, #ff758c, #ff7eb3);
-    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #ffdde1, #ee9ca7);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+/* Page sections */
+section {
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    color: white;
-    text-align: center;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    animation: fadeDown 2s;
+}
+
+p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 20px;
+    opacity: 0;
+    animation: fadeUp 2s forwards;
+    animation-delay: 1s;
+}
+
+/* Button */
+button {
+    background: #fff;
+    color: #ee6a7c;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    animation: pulse 1.5s infinite;
 }
 
 /* Cake */
 .cake {
-    position: absolute;
-    top: 25%;
-    animation: cakePop 2s ease forwards;
+    font-size: 120px;
+    animation: bounce 2s infinite;
 }
 
-@keyframes cakePop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
-}
-
-.layer {
-    width: 180px;
-    height: 60px;
-    background: #fff;
-    border-radius: 10px;
-    margin: 6px auto;
-}
-
-.layer:nth-child(2) {
-    background: #ffd1dc;
-}
-
-.layer:nth-child(3) {
-    background: #ffb6c1;
-}
-
-.candle {
-    width: 12px;
-    height: 40px;
-    background: white;
-    margin: auto;
-    position: relative;
-}
-
-.flame {
-    width: 14px;
-    height: 14px;
-    background: gold;
-    border-radius: 50%;
-    position: absolute;
-    top: -14px;
-    left: -1px;
-    animation: flicker 1s infinite;
-}
-
-@keyframes flicker {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-}
-
-/* Letter */
-.letter {
-    max-width: 600px;
-    background: rgba(255,255,255,0.15);
-    padding: 40px;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    animation: fadeUp 2s ease forwards;
-    opacity: 0;
-    animation-delay: 3s;
+/* Animations */
+@keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {opacity: 0; transform: translateY(50px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.7;
+@keyframes bounce {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-20px);}
 }
 
-.final {
-    margin-top: 25px;
-    font-weight: bold;
-    font-size: 20px;
+/* Hidden sections */
+#cakeSection, #letterSection, #finalWish {
+    display: none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Cake -->
-<div class="cake">
-    <div class="candle">
-        <div class="flame"></div>
-    </div>
-    <div class="layer"></div>
-    <div class="layer"></div>
-    <div class="layer"></div>
-</div>
+<!-- SECTION 1 -->
+<section id="intro">
+    <h1>🎉 Happy Birthday Tasneem 💖</h1>
+    <p>I have a surprise for you ✨</p>
+    <button onclick="showCake()">Open Surprise 🎁</button>
+</section>
 
-<!-- Letter -->
-<div class="letter">
-    <h1>🎂 Happy Birthday Tasneem 💖</h1>
-    <p>
-        Happy Birthday to the girl who means the world to me!  
-        Thank you for being my safe place, my partner in every crazy plan,  
-        and the one person who understands me without even trying.
-    </p>
-    <p>
-        I'm so grateful for every laugh, every late-night talk,  
-        every memory, and every little moment we have shared.  
-        You deserve all the happiness and love.
-    </p>
-    <p>
-        You're strong, beautiful, and so talented — watching you shine  
-        makes me happier than words can explain.  
-        I hope this year brings new opportunities  
-        and endless reasons to smile.
-    </p>
-    <p>
-        I love you so much — forever and always 💕
-    </p>
+<!-- SECTION 2 -->
+<section id="cakeSection">
+    <div class="cake">🎂</div>
+    <button onclick="showLetter()">Next 💕</button>
+</section>
 
-    <div class="final">
-        Once again, Happy Birthday ✨  
-        May Allah fulfill all of your dreams 🌸
-    </div>
-</div>
+<!-- SECTION 3 -->
+<section id="letterSection">
+    <p>
+    Happy Birthday to the girl who means the world to me!<br><br>
+
+    Thank you for being my safe place, my partner in every crazy plan,
+    and the one person who understands me without even trying.
+    I'm so grateful for every laugh, every late-night talk,
+    every memory, and every little moment we have shared.<br><br>
+
+    You deserve all the happiness and love 🤍<br><br>
+
+    You're strong, beautiful, and so talented.
+    Watching you shine makes me happier than words can explain.
+    I hope this year brings new opportunities
+    and endless reasons to smile 🌸<br><br>
+
+    I love you so much — forever and always 💖
+    </p>
+    <button onclick="showFinal()">One More 💫</button>
+</section>
+
+<!-- SECTION 4 -->
+<section id="finalWish">
+    <h1>✨ Once Again Happy Birthday 🎉</h1>
+    <p>May Allah fulfill all of your dreams 🤍</p>
+</section>
+
+<script>
+function showCake() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("cakeSection").style.display = "flex";
+}
+
+function showLetter() {
+    document.getElementById("cakeSection").style.display = "none";
+    document.getElementById("letterSection").style.display = "flex";
+}
+
+function showFinal() {
+    document.getElementById("letterSection").style.display = "none";
+    document.getElementById("finalWish").style.display = "flex";
+}
+</script>
 
 </body>
 </html>
