@@ -1,7 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="refresh" content="0; url=surprise.html">
+<meta charset="UTF-8">
+<title>Happy Birthday Tasneem</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    color: #5a2a45;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.7rem;
+    color: #7b2c4a;
+}
+
+p {
+    max-width: 780px;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+button {
+    margin-top: 25px;
+    padding: 14px 36px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 40px;
+    background: #ffb6c1;
+    color: #5a2a45;
+    cursor: pointer;
+}
+
+.cake {
+    font-size: 140px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-25px); }
+}
+
+.float {
+    position: fixed;
+    bottom: -20px;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-120vh); }
+}
+
+#cake, #letter, #final {
+    display: none;
+}
+</style>
 </head>
-<body></body>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()" style="position:fixed; top:20px; right:20px;">
+🎶 Play Music
+</button>
+
+<script>
+function playMusic(){
+    document.getElementById("music").play();
+}
+</script>
+
+<!-- floating hearts & balloons -->
+<script>
+const items = ["💖","🎈","✨","🌸"];
+for(let i=0;i<30;i++){
+    let el = document.createElement("div");
+    el.className = "float";
+    el.innerHTML = items[Math.floor(Math.random()*items.length)];
+    el.style.left = Math.random()*100 + "vw";
+    el.style.fontSize = 14 + Math.random()*18 + "px";
+    el.style.animationDuration = 7 + Math.random()*6 + "s";
+    document.body.appendChild(el);
+}
+</script>
+
+<!-- SECTION 1 -->
+<section id="start">
+    <h1>🎉 Happy Birthday Tasneem 💕</h1>
+    <p>I made something special just for you ✨</p>
+    <button onclick="showCake()">Open Surprise 🎁</button>
+</section>
+
+<!-- SECTION 2 -->
+<section id="cake">
+    <div class="cake">🎂</div>
+    <p>A sweet cake for the sweetest soul 🌸</p>
+    <button onclick="showLetter()">Next 💖</button>
+</section>
+
+<!-- SECTION 3 -->
+<section id="letter">
+    <h1>For You 💗</h1>
+    <p>
+    You are not just my best friend, you are my safe place,  
+    my smile, my happiness 🌸  
+    Life feels brighter because of you ✨  
+    <br><br>
+    May your days be filled with love, laughter,  
+    dreams coming true, and endless joy 🎉  
+    </p>
+    <button onclick="showFinal()">One More Surprise 🎀</button>
+</section>
+
+<!-- FINAL -->
+<section id="final">
+    <h1>💖 Forever Special 💖</h1>
+    <p>Happy Birthday Tasneem 💕<br>— From Alisha</p>
+</section>
+
+<script>
+function showCake(){
+    start.style.display="none";
+    cake.style.display="flex";
+}
+function showLetter(){
+    cake.style.display="none";
+    letter.style.display="flex";
+}
+function showFinal(){
+    letter.style.display="none";
+    final.style.display="flex";
+}
+</script>
+
+</body>
 </html>
