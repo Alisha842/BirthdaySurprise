@@ -4,109 +4,94 @@
 <meta charset="UTF-8">
 <title>Happy Birthday Tasneem</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
     font-family: 'Poppins', sans-serif;
-    color: #fff;
-    text-align: center;
+    background: radial-gradient(circle at top, #fdeff9, #c2e9fb, #a1c4fd);
+    color: #ffffff;
     overflow-x: hidden;
+    text-align: center;
 }
 
-/* sections */
+/* Sections */
 section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 30px;
 }
 
-/* stars */
-.star {
-    position: fixed;
-    top: -10px;
-    font-size: 14px;
-    animation: fall linear infinite;
-    opacity: 0.7;
+/* Headings */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.9rem;
+    animation: glow 3s infinite alternate;
 }
 
-@keyframes fall {
-    from { transform: translateY(0); }
-    to { transform: translateY(110vh); }
+@keyframes glow {
+    from { text-shadow: 0 0 12px #fff; }
+    to { text-shadow: 0 0 40px #ffb6c1; }
 }
 
-/* hearts */
-.heart {
+/* Paragraph */
+p {
+    max-width: 780px;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    opacity: 0;
+    animation: fadeUp 2.5s forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
+button {
+    margin-top: 35px;
+    background: linear-gradient(45deg, #ffffff, #ffe4ec);
+    color: #ff6f91;
+    border: none;
+    padding: 15px 42px;
+    border-radius: 45px;
+    font-size: 1rem;
+    cursor: pointer;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    50% { transform: scale(1.12); }
+}
+
+/* Cake */
+.cake {
+    font-size: 150px;
+    animation: bounce 2.8s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-35px); }
+}
+
+/* Floating items */
+.float {
     position: fixed;
     bottom: -20px;
-    font-size: 18px;
     animation: floatUp linear infinite;
-    opacity: 0.6;
+    opacity: 0.75;
 }
 
 @keyframes floatUp {
     to { transform: translateY(-120vh); }
 }
 
-/* headings */
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.7rem;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px #fff; }
-    to { text-shadow: 0 0 30px #ffb6c1; }
-}
-
-/* text */
-p {
-    max-width: 750px;
-    font-size: 1.1rem;
-    line-height: 1.9;
-    opacity: 0;
-    animation: fadeUp 2s forwards;
-}
-
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* buttons */
-button {
-    background: #fff;
-    color: #ff6f91;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-size: 1rem;
-    margin-top: 30px;
-    cursor: pointer;
-    animation: pulse 1.6s infinite;
-}
-
-@keyframes pulse {
-    50% { transform: scale(1.1); }
-}
-
-/* cake */
-.cake {
-    font-size: 130px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    50% { transform: translateY(-25px); }
-}
-
-/* hidden */
+/* Hidden sections */
 #cakeSection, #letterSection, #finalWish {
     display: none;
 }
@@ -115,49 +100,50 @@ button {
 
 <body>
 
-<!-- Background music -->
+<!-- Background Music -->
 <audio autoplay loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- stars + hearts -->
+<!-- Floating animations -->
 <script>
-for(let i=0;i<30;i++){
-    let s=document.createElement("div");
-    s.className="star";
-    s.innerHTML="✨";
-    s.style.left=Math.random()*100+"vw";
-    s.style.animationDuration=5+Math.random()*5+"s";
-    document.body.appendChild(s);
-}
-for(let i=0;i<25;i++){
-    let h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="💖";
-    h.style.left=Math.random()*100+"vw";
-    h.style.animationDuration=6+Math.random()*4+"s";
-    document.body.appendChild(h);
+const floats = [
+    {emoji:"🎈", size:26},
+    {emoji:"💖", size:18},
+    {emoji:"✨", size:14},
+    {emoji:"🌸", size:16}
+];
+
+for(let i=0;i<55;i++){
+    const item = floats[Math.floor(Math.random()*floats.length)];
+    let el = document.createElement("div");
+    el.className = "float";
+    el.innerHTML = item.emoji;
+    el.style.left = Math.random()*100+"vw";
+    el.style.fontSize = item.size+"px";
+    el.style.animationDuration = 7 + Math.random()*6 + "s";
+    document.body.appendChild(el);
 }
 </script>
 
 <!-- SECTION 1 -->
 <section id="intro">
     <h1>🎉 Happy Birthday Tasneem 💕</h1>
-    <p style="animation-delay:1s;">I have a little surprise for you ✨</p>
+    <p style="animation-delay:1s;">A little fairytale made just for you ✨</p>
     <button onclick="showCake()">Open Surprise 🎁</button>
 </section>
 
 <!-- SECTION 2 -->
 <section id="cakeSection">
     <div class="cake">🎂</div>
-    <p style="animation-delay:1s;">A sweet cake for the sweetest soul 🧁</p>
+    <p style="animation-delay:1s;">A sweet celebration for a beautiful soul 🌸</p>
     <button onclick="showLetter()">Next 💖</button>
 </section>
 
 <!-- SECTION 3 -->
 <section id="letterSection">
     <p id="typedText"></p>
-    <button onclick="showFinal()">One Last Thing ✨</button>
+    <button onclick="showFinal()">Final Wish ✨</button>
 </section>
 
 <!-- SECTION 4 -->
@@ -167,7 +153,7 @@ for(let i=0;i<25;i++){
 </section>
 
 <script>
-const message = `Happy Birthday to the girl who means the world to me! 💕\n\n
+const message = `Happy Birthday to the girl who means the world to me 💕\n\n
 Thank you for being my safe place, my partner in every crazy plan,
 and the one person who understands me without even trying.
 I'm so grateful for every laugh, every late-night talk,
@@ -179,12 +165,11 @@ I hope this year brings new opportunities
 and endless reasons to smile 🌸\n\n
 I love you so much — forever and always 💖`;
 
-let index = 0;
-
+let i = 0;
 function typeText(){
-    if(index < message.length){
-        typedText.innerHTML += message.charAt(index);
-        index++;
+    if(i < message.length){
+        typedText.innerHTML += message.charAt(i);
+        i++;
         setTimeout(typeText, 40);
     }
 }
@@ -208,4 +193,3 @@ function showFinal(){
 
 </body>
 </html>
-
