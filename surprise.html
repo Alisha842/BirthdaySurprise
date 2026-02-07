@@ -2,47 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Tasneem 💕</title>
+<title>For Tasneem 💖</title>
 
 <style>
 body {
     margin: 0;
     height: 100vh;
-    background: radial-gradient(circle at top, #ff758c, #ff7eb3);
+    background: radial-gradient(circle, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
     color: white;
     text-align: center;
 }
 
-/* Confetti */
-.confetti {
+/* Cake */
+.cake {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    top: 25%;
+    animation: cakePop 2s ease forwards;
+}
+
+@keyframes cakePop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.layer {
+    width: 180px;
+    height: 60px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 6px auto;
+}
+
+.layer:nth-child(2) {
+    background: #ffd1dc;
+}
+
+.layer:nth-child(3) {
+    background: #ffb6c1;
+}
+
+.candle {
+    width: 12px;
+    height: 40px;
     background: white;
-    top: -10px;
-    animation: fall 4s linear infinite;
+    margin: auto;
+    position: relative;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
+.flame {
+    width: 14px;
+    height: 14px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    top: -14px;
+    left: -1px;
+    animation: flicker 1s infinite;
 }
 
-/* Glow message box */
-.message {
+@keyframes flicker {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Letter */
+.letter {
+    max-width: 600px;
     background: rgba(255,255,255,0.15);
-    padding: 45px;
+    padding: 40px;
     border-radius: 30px;
     backdrop-filter: blur(10px);
     box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    animation: fadeUp 2s ease;
-    z-index: 2;
+    animation: fadeUp 2s ease forwards;
+    opacity: 0;
+    animation-delay: 3s;
 }
 
 @keyframes fadeUp {
@@ -50,52 +88,65 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.message h1 {
-    font-size: 40px;
-    text-shadow: 0 0 20px rgba(255,255,255,0.6);
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-.message p {
-    margin-top: 20px;
+p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
+}
+
+.final {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<!-- Cake -->
+<div class="cake">
+    <div class="candle">
+        <div class="flame"></div>
+    </div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+    <div class="layer"></div>
+</div>
 
-<!-- Confetti -->
-<div class="confetti" style="left:5%; animation-delay:0s;"></div>
-<div class="confetti" style="left:15%; animation-delay:1s;"></div>
-<div class="confetti" style="left:25%; animation-delay:2s;"></div>
-<div class="confetti" style="left:35%; animation-delay:0.5s;"></div>
-<div class="confetti" style="left:45%; animation-delay:1.5s;"></div>
-<div class="confetti" style="left:55%; animation-delay:2.5s;"></div>
-<div class="confetti" style="left:65%; animation-delay:1s;"></div>
-<div class="confetti" style="left:75%; animation-delay:2s;"></div>
-<div class="confetti" style="left:85%; animation-delay:0.8s;"></div>
-
-<div class="message">
+<!-- Letter -->
+<div class="letter">
     <h1>🎂 Happy Birthday Tasneem 💖</h1>
     <p>
-        You are not just my best friend,  
-        you are my safe place, my smile, my happiness 🌸  
-        Life feels brighter because of you ✨  
+        Happy Birthday to the girl who means the world to me!  
+        Thank you for being my safe place, my partner in every crazy plan,  
+        and the one person who understands me without even trying.
     </p>
     <p>
-        May your days be full of love, laughter,  
-        dreams coming true, and endless joy 🎉  
+        I'm so grateful for every laugh, every late-night talk,  
+        every memory, and every little moment we have shared.  
+        You deserve all the happiness and love.
     </p>
     <p>
-        — From Alisha 💕
+        You're strong, beautiful, and so talented — watching you shine  
+        makes me happier than words can explain.  
+        I hope this year brings new opportunities  
+        and endless reasons to smile.
     </p>
+    <p>
+        I love you so much — forever and always 💕
+    </p>
+
+    <div class="final">
+        Once again, Happy Birthday ✨  
+        May Allah fulfill all of your dreams 🌸
+    </div>
 </div>
 
 </body>
 </html>
+
